@@ -18,3 +18,5 @@
 README-template.md
 README.md
 style-guide.md
+package-lock.json
+node_modules/
