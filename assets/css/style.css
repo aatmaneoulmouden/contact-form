@@ -468,6 +468,11 @@ input{
 
 input[type="checkbox"]{
   height: auto;
+  accent-color: hsl(169, 82%, 27%);
+}
+
+input[type="radio"] {
+  accent-color: hsl(169, 82%, 27%);
 }
 
 *, ::before, ::after{
@@ -625,6 +630,13 @@ input[type="checkbox"]{
   padding-right: 1rem;
 }
 
+.\!field:focus{
+  --tw-border-opacity: 1;
+  border-color: hsl(169 82% 27% / var(--tw-border-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .field{
   width: 100%;
   cursor: pointer;
@@ -636,6 +648,13 @@ input[type="checkbox"]{
   padding-bottom: 0.75rem;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.field:focus{
+  --tw-border-opacity: 1;
+  border-color: hsl(169 82% 27% / var(--tw-border-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .is-required{
@@ -937,6 +956,10 @@ input[type="checkbox"]{
   min-height: 100vh;
 }
 
+.w-\[640px\]{
+  width: 640px;
+}
+
 .w-\[this-is\\\\\]{
   width: this-is\\;
 }
@@ -951,18 +974,6 @@ input[type="checkbox"]{
 
 .w-full{
   width: 100%;
-}
-
-.w-\[690px\]{
-  width: 690px;
-}
-
-.w-\[640px\]{
-  width: 640px;
-}
-
-.max-w-\[690px\]{
-  max-width: 690px;
 }
 
 .flex-shrink{
@@ -1943,6 +1954,11 @@ input[type="checkbox"]{
 .bg-green{
   --tw-bg-opacity: 1;
   background-color: hsl(169 82% 27% / var(--tw-bg-opacity));
+}
+
+.bg-light-green{
+  --tw-bg-opacity: 1;
+  background-color: hsl(148 38% 91% / var(--tw-bg-opacity));
 }
 
 .bg-neutral-white{

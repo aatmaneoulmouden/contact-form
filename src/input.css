@@ -18,13 +18,17 @@
     }
 
     input[type="checkbox"] {
-        @apply h-auto;
+        @apply h-auto accent-green;
+    }
+
+    input[type="radio"] {
+        accent-color: hsl(169, 82%, 27%);
     }
 }
 
 @layer components {
     .field {
-        @apply w-full border border-neutral-medium-grey rounded-md py-3 px-4 cursor-pointer;
+        @apply w-full border border-neutral-medium-grey rounded-md py-3 px-4 cursor-pointer focus:outline-none focus:border-green;
     }
 
     .is-required {
