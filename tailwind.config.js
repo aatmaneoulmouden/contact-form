@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         'light-green': 'hsl(148, 38%, 91%)',
+        'dark-green': '#063F36',
         'green': 'hsl(169, 82%, 27%)',
         'red': 'hsl(0, 66%, 56%)',
         'neutral': {

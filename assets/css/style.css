@@ -466,12 +466,9 @@ input{
   height: 2.75rem;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"],
+    input[type="radio"]{
   height: auto;
-  accent-color: hsl(169, 82%, 27%);
-}
-
-input[type="radio"] {
   accent-color: hsl(169, 82%, 27%);
 }
 
@@ -630,6 +627,11 @@ input[type="radio"] {
   padding-right: 1rem;
 }
 
+.\!field:hover{
+  --tw-border-opacity: 1;
+  border-color: hsl(169 82% 27% / var(--tw-border-opacity));
+}
+
 .\!field:focus{
   --tw-border-opacity: 1;
   border-color: hsl(169 82% 27% / var(--tw-border-opacity));
@@ -648,6 +650,11 @@ input[type="radio"] {
   padding-bottom: 0.75rem;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.field:hover{
+  --tw-border-opacity: 1;
+  border-color: hsl(169 82% 27% / var(--tw-border-opacity));
 }
 
 .field:focus{
@@ -685,6 +692,11 @@ input[type="radio"] {
   border-color: hsl(186 15% 59% / var(--tw-border-opacity));
 }
 
+.\!option:hover{
+  --tw-border-opacity: 1;
+  border-color: hsl(169 82% 27% / var(--tw-border-opacity));
+}
+
 .option{
   display: flex;
   height: 2.75rem;
@@ -698,12 +710,55 @@ input[type="radio"] {
   border-color: hsl(186 15% 59% / var(--tw-border-opacity));
 }
 
+.option:hover{
+  --tw-border-opacity: 1;
+  border-color: hsl(169 82% 27% / var(--tw-border-opacity));
+}
+
 .\!option label{
   margin-bottom: 0px;
 }
 
 .option label{
   margin-bottom: 0px;
+}
+
+.option-radio{
+  position: relative;
+}
+
+.option-radio::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 115%;
+  height: 115%;
+  border-radius: 50%;
+  border: 1px solid hsl(186, 15%, 59%);
+  background-color: hsl(0, 0%, 100%);
+}
+
+.option-radio::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: hsl(169, 82%, 27%);
+  display: none;
+}
+
+.option-radio:checked::before {
+  border-color: hsl(169, 82%, 27%);
+}
+
+.option-radio:checked::after {
+  display: block;
 }
 
 .sr-only{
@@ -2632,6 +2687,11 @@ input[type="radio"] {
       max-width: 1536px;
     }
   }
+}
+
+.hover\:bg-dark-green:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(6 63 54 / var(--tw-bg-opacity));
 }
 
 .hover\:font-bold:hover{

@@ -17,18 +17,15 @@
         @apply h-11;
     }
 
-    input[type="checkbox"] {
-        @apply h-auto accent-green;
-    }
-
+    input[type="checkbox"],
     input[type="radio"] {
-        accent-color: hsl(169, 82%, 27%);
+        @apply h-auto accent-green;
     }
 }
 
 @layer components {
     .field {
-        @apply w-full border border-neutral-medium-grey rounded-md py-3 px-4 cursor-pointer focus:outline-none focus:border-green;
+        @apply w-full border border-neutral-medium-grey rounded-md py-3 px-4 cursor-pointer focus:outline-none focus:border-green hover:border-green;
     }
 
     .is-required {
@@ -44,10 +41,49 @@
     }
 
     .option {
-        @apply flex justify-center items-center gap-2 h-11 border border-neutral-medium-grey rounded-md cursor-pointer;
+        @apply flex justify-center items-center gap-2 h-11 border border-neutral-medium-grey rounded-md cursor-pointer hover:border-green;
     }
 
     .option label {
         @apply mb-0;
     }
+
+    .option-radio {
+        @apply relative;
+    }
+
+    .option-radio::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 115%;
+        height: 115%;
+        border-radius: 50%;
+        border: 1px solid hsl(186, 15%, 59%);
+        background-color: hsl(0, 0%, 100%);
+    }
+
+    .option-radio::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        background-color: hsl(169, 82%, 27%);
+        display: none;
+    }
+
+    .option-radio:checked::before {
+        border-color: hsl(169, 82%, 27%);
+    }
+
+    .option-radio:checked::after {
+        display: block;
+    }
+
 }
