@@ -17,9 +17,12 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container mx-auto">
       <div class="w-full min-h-screen flex justify-center items-center">
-        <div class="form bg-neutral-white w-[640px] p-6 rounded-lg">
+        <form
+          class="form bg-neutral-white w-[640px] p-6 rounded-lg"
+          id="contact-form"
+        >
           <h1 class="text-2xl font-bold mb-5">Contact Us</h1>
           <div class="form-row has-two-cols">
             <div class="input-wrapper">
@@ -27,12 +30,14 @@
                 >First Name <span class="is-required">*</span></label
               >
               <input type="text" class="field" id="first-name" />
+              <small class="error-placeholder"></small>
             </div>
             <div class="input-wrapper">
               <label for="last-name"
                 >Last Name <span class="is-required">*</span></label
               >
               <input type="text" class="field" id="last-name" />
+              <small class="error-placeholder"></small>
             </div>
           </div>
           <div class="form-row">
@@ -41,6 +46,7 @@
                 >Email Address <span class="is-required">*</span></label
               >
               <input type="email" class="field" id="email" />
+              <small class="error-placeholder"></small>
             </div>
           </div>
           <div class="form-row">
@@ -50,14 +56,28 @@
               >
               <div class="options-row has-two-cols">
                 <label class="option" for="general">
-                  <input type="radio" name="query-type" id="general" class="option-radio" />
+                  <input
+                    type="radio"
+                    name="query-type"
+                    id="general"
+                    class="option-radio"
+                  />
                   <label for="general">General Enquiry</label>
                 </label>
                 <label class="option" for="support">
-                  <input type="radio" name="query-type" id="support" class="option-radio" />
+                  <input
+                    type="radio"
+                    name="query-type"
+                    id="support"
+                    class="option-radio"
+                  />
                   <label for="support">Support Request</label>
                 </label>
               </div>
+              <small
+                class="error-placeholder"
+                id="option-error-placeholder"
+              ></small>
             </div>
           </div>
           <div class="form-row">
@@ -65,7 +85,12 @@
               <label for="message"
                 >Message <span class="is-required">*</span></label
               >
-              <textarea name="" id="message" class="field h-[98px] resize-none"></textarea>
+              <textarea
+                name=""
+                id="message"
+                class="field h-[98px] resize-none"
+              ></textarea>
+              <small class="error-placeholder"></small>
             </div>
           </div>
           <div class="form-row">
@@ -76,20 +101,20 @@
                 <span class="is-required">*</span></label
               >
             </div>
+            <small class="error-placeholder" id="checkbox-error-placeholder"></small>
           </div>
           <button
+            type="submit"
             class="h-11 w-full bg-green rounded-md font-bold text-neutral-white text-lg mt-2 hover:bg-dark-green"
           >
             Submit
           </button>
-        </div>
+        </form>
       </div>
     </div>
 
-    This field is required This field is required Please enter a valid email
-    address This field is required Please select a query type This field is
-    required To submit this form, please consent to being contacted Message
-    Sent! Thanks for completing the form. We'll be in touch soon!
+    Message Sent! Thanks for
+    completing the form. We'll be in touch soon!
 
     <div class="attribution">
       Challenge by

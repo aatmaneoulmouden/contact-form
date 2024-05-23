@@ -14,18 +14,34 @@
     }
 
     input {
-        @apply h-11;
+        @apply h-11 focus:outline-none;
     }
 
     input[type="checkbox"],
     input[type="radio"] {
         @apply h-auto accent-green;
     }
+
+    textarea {
+        @apply focus:outline-none;
+    }
+
+    button {
+        @apply focus:outline-none;
+    }
 }
 
 @layer components {
     .field {
-        @apply w-full border border-neutral-medium-grey rounded-md py-3 px-4 cursor-pointer focus:outline-none focus:border-green hover:border-green;
+        @apply w-full border border-neutral-medium-grey rounded-md py-3 px-4 cursor-pointer;
+    }
+
+    .field:not(.has-error) {
+        @apply focus:border-green hover:border-green
+    }
+
+    .has-error {
+        @apply border-red;
     }
 
     .is-required {
@@ -86,4 +102,7 @@
         display: block;
     }
 
+    .error-placeholder {
+        @apply text-red mt-1 block text-sm;
+    }
 }

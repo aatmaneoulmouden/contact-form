@@ -466,10 +466,25 @@ input{
   height: 2.75rem;
 }
 
+input:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 input[type="checkbox"],
     input[type="radio"]{
   height: auto;
   accent-color: hsl(169, 82%, 27%);
+}
+
+textarea:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+button:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 *, ::before, ::after{
@@ -627,18 +642,6 @@ input[type="checkbox"],
   padding-right: 1rem;
 }
 
-.\!field:hover{
-  --tw-border-opacity: 1;
-  border-color: hsl(169 82% 27% / var(--tw-border-opacity));
-}
-
-.\!field:focus{
-  --tw-border-opacity: 1;
-  border-color: hsl(169 82% 27% / var(--tw-border-opacity));
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
 .field{
   width: 100%;
   cursor: pointer;
@@ -652,16 +655,29 @@ input[type="checkbox"],
   padding-right: 1rem;
 }
 
-.field:hover{
+.\!field:not(.has-error):hover{
   --tw-border-opacity: 1;
   border-color: hsl(169 82% 27% / var(--tw-border-opacity));
 }
 
-.field:focus{
+.\!field:not(.has-error):focus{
   --tw-border-opacity: 1;
   border-color: hsl(169 82% 27% / var(--tw-border-opacity));
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+}
+
+.field:not(.has-error):hover{
+  --tw-border-opacity: 1;
+  border-color: hsl(169 82% 27% / var(--tw-border-opacity));
+}
+
+.field:not(.has-error):focus{
+  --tw-border-opacity: 1;
+  border-color: hsl(169 82% 27% / var(--tw-border-opacity));
+}
+
+.has-error{
+  --tw-border-opacity: 1;
+  border-color: hsl(0 66% 56% / var(--tw-border-opacity));
 }
 
 .is-required{
@@ -759,6 +775,15 @@ input[type="checkbox"],
 
 .option-radio:checked::after {
   display: block;
+}
+
+.error-placeholder{
+  margin-top: 0.25rem;
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: hsl(0 66% 56% / var(--tw-text-opacity));
 }
 
 .sr-only{
@@ -886,6 +911,11 @@ input[type="checkbox"],
 
 .clear-none{
   clear: none;
+}
+
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mb-0{
