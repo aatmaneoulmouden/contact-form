@@ -451,6 +451,7 @@ video {
 body{
   --tw-bg-opacity: 1;
   background-color: hsl(148 38% 91% / var(--tw-bg-opacity));
+  padding-top: 2rem;
   font-family: Karla, sans-serif;
   --tw-text-opacity: 1;
   color: hsl(187 24% 22% / var(--tw-text-opacity));
@@ -597,6 +598,8 @@ button:focus{
 
 .container{
   width: 100%;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 @media (min-width: 640px){
@@ -691,11 +694,18 @@ button:focus{
 
 .has-two-cols{
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1rem;
 }
 
+@media (min-width: 768px){
+  .has-two-cols{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .\!option{
+  margin-bottom: 0px;
   display: flex;
   height: 2.75rem;
   cursor: pointer;
@@ -714,6 +724,7 @@ button:focus{
 }
 
 .option{
+  margin-bottom: 0px;
   display: flex;
   height: 2.75rem;
   cursor: pointer;
@@ -2686,6 +2697,8 @@ button:focus{
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
   }
 
   @media (min-width: 640px){

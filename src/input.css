@@ -6,7 +6,7 @@
 
 @layer base {
     body {
-        @apply font-main text-neutral-dark-grey bg-light-green;
+        @apply font-main text-neutral-dark-grey bg-light-green pt-8;
     }
 
     label {
@@ -53,11 +53,11 @@
     }
 
     .has-two-cols {
-        @apply grid grid-cols-2 gap-4;
+        @apply grid grid-cols-1 md:grid-cols-2 gap-4;
     }
 
     .option {
-        @apply flex justify-center items-center gap-2 h-11 border border-neutral-medium-grey rounded-md cursor-pointer hover:border-green;
+        @apply flex justify-center items-center gap-2 h-11 border border-neutral-medium-grey rounded-md mb-0 cursor-pointer hover:border-green;
     }
 
     .option label {

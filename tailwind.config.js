@@ -2,6 +2,11 @@
 module.exports = {
   content: ["./**/*{.html,js}"],
   theme: {
+    container: {
+      padding: {
+        DEFAULT: '1.5rem',
+      }
+    },
     fontFamily: {
       'main': ['Karla', 'sans-serif'],
     },
