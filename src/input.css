@@ -6,7 +6,7 @@
 
 @layer base {
     body {
-        @apply font-main text-neutral-dark-grey bg-light-green pt-8;
+        @apply font-main text-neutral-dark-grey bg-light-green pt-8 md:pt-0;
     }
 
     label {

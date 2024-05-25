@@ -1,16 +1,17 @@
+// DOM Elements
 const queryTypeInputs = document.querySelectorAll('input[name="query-type"]');
 const fields = document.querySelectorAll('.field');
 const contactForm = document.querySelector('#contact-form');
 const checkboxField = document.querySelector('#agree');
 
-
+// Variables
 let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 let errors = {
     "empty": "This field is required",
     "invalidEmail": "Please enter a valid email address",
 }
 
-
+// Function: Validate fields (text and email)
 const validateField = (field) => {
     let errorPlaceholder = field.nextElementSibling;
 
@@ -30,6 +31,7 @@ const validateField = (field) => {
     }
 }
 
+// Function: Validate options (only readio inputs)
 const validateOptions = (options) => {
     const errorPlaceholder = document.querySelector('#option-error-placeholder');
 
@@ -48,6 +50,7 @@ const validateOptions = (options) => {
     }
 };
 
+// Function: Validate checkbox
 const validateCheckbox = (checkbox) => {
     const errorPlaceholder = document.querySelector('#checkbox-error-placeholder');
 
@@ -59,9 +62,7 @@ const validateCheckbox = (checkbox) => {
 }
 
 
-/**
- * Query Type Handler
- */
+// Query Type Handler
 queryTypeInputs.forEach(input => {
     input.addEventListener('change', () => {
         validateOptions(queryTypeInputs);
@@ -72,19 +73,19 @@ queryTypeInputs.forEach(input => {
     });
 });
 
-/**
- * Form validation
- */
+// Call form validation function
 fields.forEach(field => {
     field.addEventListener('focusout', () => {
         validateField(field);
     });
 });
 
+// Call validate checkbox function when checking/unchecking the checkbox
 checkboxField.addEventListener('change', () => {
     validateCheckbox(checkboxField);
 });
 
+// Call functions when submit the form
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     fields.forEach(field => {

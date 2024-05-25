@@ -457,6 +457,12 @@ body{
   color: hsl(187 24% 22% / var(--tw-text-opacity));
 }
 
+@media (min-width: 768px){
+  body{
+    padding-top: 0px;
+  }
+}
+
 label{
   margin-bottom: 0.5rem;
   display: block;
