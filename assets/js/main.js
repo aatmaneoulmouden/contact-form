@@ -3,13 +3,14 @@ const queryTypeInputs = document.querySelectorAll('input[name="query-type"]');
 const fields = document.querySelectorAll('.field');
 const contactForm = document.querySelector('#contact-form');
 const checkboxField = document.querySelector('#agree');
+const successToast = document.querySelector('#toast');
 
 // Variables
 let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 let errors = {
     "empty": "This field is required",
     "invalidEmail": "Please enter a valid email address",
-}
+};
 
 // Function: Validate fields (text and email)
 const validateField = (field) => {
@@ -22,13 +23,17 @@ const validateField = (field) => {
     if (field.value.length < 1) {
         field.classList.add('has-error');
         errorPlaceholder.textContent = errors.empty;
+        return false;
     }
 
     // Invalid email
     if (field.getAttribute('type') === 'email' && field.value.length > 0 && !emailRegex.test(field.value)) {
         field.classList.add('has-error');
         errorPlaceholder.textContent = errors.invalidEmail;
+        return false;
     }
+
+    return true;
 }
 
 // Function: Validate options (only readio inputs)
@@ -45,8 +50,10 @@ const validateOptions = (options) => {
 
     if (!queryTypeChecked) {
         errorPlaceholder.textContent = 'Please select a query type';
+        return false;
     } else {
         errorPlaceholder.textContent = '';
+        return true;
     }
 };
 
@@ -56,8 +63,10 @@ const validateCheckbox = (checkbox) => {
 
     if (!checkbox.checked) {
         errorPlaceholder.textContent = 'To submit this form, please consent to being contacted';
+        return false;
     } else {
         errorPlaceholder.textContent = '';
+        return true;
     }
 }
 
@@ -87,10 +96,23 @@ checkboxField.addEventListener('change', () => {
 
 // Call functions when submit the form
 contactForm.addEventListener('submit', (e) => {
+    let formHasError = false;
     e.preventDefault();
+
     fields.forEach(field => {
-        validateField(field);
+        formHasError = validateField(field);
     });
-    validateOptions(queryTypeInputs);
-    validateCheckbox(checkboxField);
+    formHasError = validateOptions(queryTypeInputs);
+    formHasError = validateCheckbox(checkboxField);
+
+    if (formHasError) {
+        successToast.classList.remove('-translate-y-full', 'top-0');
+        successToast.classList.add('top-5', 'translate-y-0');
+
+        setTimeout(() => {
+            successToast.classList.remove('top-5', 'translate-y-0');
+            successToast.classList.add('-translate-y-full', 'top-0');
+            location.reload();
+        }, 1150);
+    }
 });
