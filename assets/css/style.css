@@ -1094,6 +1094,10 @@ button:focus{
   width: 100%;
 }
 
+.max-w-full{
+  max-width: 100%;
+}
+
 .flex-shrink{
   flex-shrink: 1;
 }
@@ -2222,6 +2226,26 @@ button:focus{
   padding: 1.5rem;
 }
 
+.pb-3{
+  padding-bottom: 0.75rem;
+}
+
+.pt-14{
+  padding-top: 3.5rem;
+}
+
+.pt-2{
+  padding-top: 0.5rem;
+}
+
+.pt-3{
+  padding-top: 0.75rem;
+}
+
+.pt-6{
+  padding-top: 1.5rem;
+}
+
 .text-left{
   text-align: left;
 }
@@ -2286,6 +2310,11 @@ button:focus{
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-bold{
@@ -2822,6 +2851,17 @@ button:focus{
 @media (min-width: 768px){
   .md\:w-auto{
     width: auto;
+  }
+
+  .md\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .lg\:pt-0{
+    padding-top: 0px;
   }
 }
 
